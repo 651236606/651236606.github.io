@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+
+/*播放器内CSS*/
+::-webkit-scrollbar {width: 5px;height: 3px;}
+::-webkit-scrollbar-thumb {border-radius: 0px;background: rgba(255, 255, 255, 0.2);}
+::-webkit-scrollbar-track {background: rgba(0, 0, 0, 0.05);}
+.qp-wrap{width:100%;height:100%;position:relative; background-color: black; overflow: hidden;min-width: 350px;line-height: 24px;font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;}
+.qp-wrap *{/* font-family:"微软雅黑"; */-webkit-transition-duration: .1s;transition-duration: .1s;padding: 0;margin: 0;border: 0;font-family: 微软雅黑;text-decoration: none;list-style-type: none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;-webkit-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+.qp-controls,.qp-top{position:absolute;left:0;right:0;}
+.qp-top{position: absolute;top: 0;left:0;right:0;background: rgba(0, 0, 0, 0.5);background: linear-gradient(to top,rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0.5) 50%,rgba(0, 0, 0, 0.7) 100%);padding: 5px 15px;line-height: 30px;color:#ccc;z-index: 90;}
+.qp-title{float: left;color: white;}
+.qp-top-tool{text-align: right;}
+.tool-btn{font-size: 20px !important;;color: white;padding: 8px 5px;}
+.qp-controls{bottom:0;z-index:90;background: rgba(0, 0, 0, 0.5);background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0.3) 50%,rgba(0, 0, 0, 0.4) 100%);}
+.qp-con-box{padding:0 10px;height: 45px;position:relative;/* padding-top: 10px; *//* background: rgba(0, 0, 0, 0.5); *//* background: linear-gradient(to bottom,rgba(0, 0, 0, 0) 0,rgba(0, 0, 0, 0.3) 50%,rgba(0, 0, 0, 0.4) 100%); */}
+.qp-controls a{cursor:pointer;color:white;font-size: 20px;padding: 8px;}
+.qp-controls a.icon-play,.qp-controls a.icon-pause{font-size: 23px;}
+.icon-list,
+.icon-cfull,
+.icon-next,
+.icon-refresh{ display:none;}
+video#player{*position:absolute;left:0;top:0;width: 100%;z-index: 0;height: 100%;}
+.qp-con-l{height: 100%;position: relative;width: 100%;align-items: center;display: inline-flex;}
+.qp-con-r{position:absolute;right:0;bottom:0;height: 100%;display: inline-flex;align-items: center;}
+.qp-time{display: -webkit-box;display: -moz-box;display: -webkit-flex;display: -moz-flex;display: -ms-flexbox;display: flex;padding: 0 10px;color: white;font-size: 13px;line-height: 16px;height: 16px;position: relative;}
+.qp-time .slider{-prefix-box-flex: 1;-webkit-box-flex: 1;-webkit-flex: 1;-moz-box-flex: 1;-ms-flex: 1;flex: 1;position: relative;padding: 0 13px;display: -webkit-box;display: -moz-box;display: -webkit-flex;display: -moz-flex;display: -ms-flexbox;display: flex;align-items: center;}
+.qp-controls.hide-controls{bottom: -45px;background:transparent;}
+.qp-top.hide-controls{top: -80px;}
+.qp-time .currentTime,
+.qp-time .duration{ min-width:40px; text-align:center;}
+.hide-controls .qp-time .slider{display:block;padding: 0;position: absolute;left: 0;right: 0;bottom: 0;}
+.hide-controls .qp-time .currentTime,
+.hide-controls .qp-time .duration,
+.hide-controls .slider .thumb:before,
+.hide-controls .slider .thumb:after{ display:none;}
+.playTip{ margin-left:12px; color:white;}
+.qp-panel-wrap{display:none;height:100%;overflow: hidden;position: absolute;top: 0;width: 100%;right: 0;padding: 30px;padding-right: 0;background-color: rgba(0, 0, 0, 0.85);color: white;z-index: 100;}
+.panel-list{height:100%;overflow-y:auto;padding-right: 30px;}
+.close-list{color: white;font-size: 20px;position: absolute;right: 5px;top: 5px;padding: 10px;z-index: 5;font-weight: bolder;}
+.close-list:hover{ color:white; cursor:pointer;}
+.qp-list{margin: 10px;line-height: 25px;position: relative;}
+.qp-list h4{position:relative;padding-left: 22px;}
+.sublist{padding-left: 22px;display:none; position:relative;}
+.qp-list>a, .sublist a{display: block;padding-left: 22px;position: relative;cursor:pointer;color:white;font-size: 14px;}
+.qp-list a.icon-item.currplay{ color:#00FF66;}
+.qp-wrap *:hover{ *color:#FFFFFF;}
+.icon-item:before{position: absolute;font-size:12px;color:#a0a0a0;margin-right:5px;width: 18px;text-align: center;left: 0;}
+.icon-open:before,.icon-close:before{position:absolute;left: 0;width: 18px;text-align: center;font-weight: normal;color: #a0a0a0;font-size: 12px;}
+.qp-logo{ position:absolute; right:25px; top:25px;z-index: 60; min-width:120px; max-width:180px;}
+.menu{position:absolute; display:none;width: 250px;background-color: white;border-radius: 2px;padding: 8px 0;box-shadow: 0 0 30px -3px #000; z-index:200; font-family:"微软雅黑"}
+.menu a{display:block;padding:5px 15px;font-size:13px;color: #333;}
+.menu a.disable{ color:#ccc;cursor:  not-allowed;}
+.menu a i{float:right; font-style:normal; color:#999999; font-size:12px;}
+.menu hr{margin:2px 0;background-color: #f4f4f4;}
+::-webkit-full-screen video {width: 100%;height: 100%;}
+::backdrop{background-attachment: fixed;background-position: center 0;background-repeat: no-repeat;background-size: cover;background-image: linear-gradient(102.7deg, #fddaff 8.2%, #dfadfc 19.6%, #adcdfc 36.8%, #adfcf4 73.2%, #caf8d0 90.9%);-webkit-background-image: linear-gradient(102.7deg, #fddaff 8.2%, #dfadfc 19.6%, #adcdfc 36.8%, #adfcf4 73.2%, #caf8d0 90.9%);}
+.qinchen-anim{-webkit-animation-duration:.3s;animation-duration:.3s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.*qinchen-anim{display:inline-block}.qinchen-anim-loop{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}.qinchen-trans,.qinchen-trans a{transition:all .3s;-webkit-transition:all .3s}@-webkit-keyframes qinchen-rotate{from{-webkit-transform:rotate(0)}to{-webkit-transform:rotate(360deg)}}@keyframes qinchen-rotate{from{transform:rotate(0)}to{transform:rotate(360deg)}}.qinchen-anim-rotate{-webkit-animation-name:qinchen-rotate;animation-name:qinchen-rotate;-webkit-animation-duration:1s;animation-duration:1s;-webkit-animation-timing-function:linear;animation-timing-function:linear}@-webkit-keyframes qinchen-up{from{-webkit-transform:translate3d(0,100%,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}@keyframes qinchen-up{from{transform:translate3d(0,100%,0);opacity:.3}to{transform:translate3d(0,0,0);opacity:1}}.qinchen-anim-up{-webkit-animation-name:qinchen-up;animation-name:qinchen-up}@-webkit-keyframes qinchen-upbit{from{-webkit-transform:translate3d(0,30px,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}@keyframes qinchen-upbit{from{transform:translate3d(0,30px,0);opacity:.3}to{transform:translate3d(0,0,0);opacity:1}}.qinchen-anim-upbit{-webkit-animation-name:qinchen-upbit;animation-name:qinchen-upbit}@-webkit-keyframes qinchen-scale{0%{opacity:.3;-webkit-transform:scale(.5)}100%{opacity:1;-webkit-transform:scale(1)}}@keyframes qinchen-scale{0%{opacity:.3;-ms-transform:scale(.5);transform:scale(.5)}100%{opacity:1;-ms-transform:scale(1);transform:scale(1)}}.qinchen-anim-scale{-webkit-animation-name:qinchen-scale;animation-name:qinchen-scale}@-webkit-keyframes qinchen-scale-spring{0%{opacity:.5;-webkit-transform:scale(.5)}80%{opacity:.8;-webkit-transform:scale(1.1)}100%{opacity:1;-webkit-transform:scale(1)}}@keyframes qinchen-scale-spring{0%{opacity:.5;transform:scale(.5)}80%{opacity:.8;transform:scale(1.1)}100%{opacity:1;transform:scale(1)}}.qinchen-anim-scaleSpring{-webkit-animation-name:qinchen-scale-spring;animation-name:qinchen-scale-spring}@-webkit-keyframes qinchen-fadein{0%{opacity:0}100%{opacity:1}}@keyframes qinchen-fadein{0%{opacity:0}100%{opacity:1}}.qinchen-anim-fadein{-webkit-animation-name:qinchen-fadein;animation-name:qinchen-fadein}@-webkit-keyframes qinchen-fadeout{0%{opacity:1}100%{opacity:0}}@keyframes qinchen-fadeout{0%{opacity:1}100%{opacity:0}}.qinchen-anim-fadeout{-webkit-animation-name:qinchen-fadeout;animation-name:qinchen-fadeout}@-webkit-keyframes qinchen-left{from{-webkit-transform:translate3d(100%,0,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}@keyframes qinchen-left{from{-webkit-transform:translate3d(100%,0,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}.qinchen-anim-left{-webkit-animation-name:qinchen-left;animation-name:qinchen-left}@-webkit-keyframes qinchen-downbit{from{-webkit-transform:translate3d(0,-30px,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}@keyframes qinchen-downbit{from{transform:translate3d(0,-30px,0);opacity:.3}to{transform:translate3d(0,0,0);opacity:1}}.qinchen-anim-downbit{-webkit-animation-name:qinchen-downbit;animation-name:qinchen-downbit}@-webkit-keyframes qinchen-leftbit{from{-webkit-transform:translate3d(30px,0,0);opacity:.3}to{-webkit-transform:translate3d(0,0,0);opacity:1}}@keyframes qinchen-leftbit{from{transform:translate3d(30px,0,0);opacity:.3}to{transform:translate3d(0,0,0);opacity:1}}.qinchen-anim-leftbit{-webkit-animation-name:qinchen-leftbit;animation-name:qinchen-leftbit}
+.loading{ position:absolute; left:50%; top:50%; z-index:60; margin:-30px 0 0 -30px; width:60px; height:60px; padding:10px; background-color:rgba(0, 0, 0, 0.8); color:white;border-radius: 3px;-moz-box-sizing: border-box;  -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;}
+.loading i{ width:40px; height:40px; line-height:40px; text-align:center; font-size:30px; display:inline-block;}
+.msg{ position:absolute; left:50%; top:50%; z-index:62; padding:10px; background-color:rgba(0, 0, 0, 0.8); color:white;border-radius: 3px;-moz-box-sizing: border-box;  -webkit-box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;opacity:0}
+.dialog{display:none;position:absolute;left:50%;top:50%;z-index:61;width: 340px;background-color: white;border-radius: 2px;box-shadow: 0 0 30px -3px #000;}
+.dialog-title{padding: 0 80px 0 20px;height: 42px;line-height: 42px;border-bottom: 1px solid #eee;font-size: 14px;color: #333;overflow: hidden;background-color: #F8F8F8;border-radius: 2px 2px 0 0;}
+.dialog-close{position: absolute;right: 14px;top: 14px;color: #939393;font-size: 16px;cursor: pointer;}
+.dialog-content{line-height: 30px;padding: 15px;}
+.dialog-buttons{text-align: right;padding: 0 15px 12px;pointer-events: auto;user-select: none;-webkit-user-select: none;}
+.dialog-buttons button{height: 28px;line-height: 28px;margin: 5px 5px 0;padding: 0 15px;border: 1px solid #dedede;background-color: #fff;color: #333;border-radius: 2px;font-weight: 400;cursor: pointer;text-decoration: none;}
+.dialog-buttons button.dialog-success{border-color: #1E9FFF;background-color: #1E9FFF;color: #fff;}
+.dialog a{ color:#1E9FFF;}
+/*播放器内CSS - END*/
